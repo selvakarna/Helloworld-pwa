@@ -5,20 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello World PWA</title>
 
+    <!-- Browser tab icon -->
+    <link rel="icon" href="icon-192.png">
+
+    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
+
     <meta name="theme-color" content="#2196f3">
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        img {
+            width: 192px;
+            height: 192px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="hello">Hello World</div>
+
+    <img src="icon-192.png" alt="App Icon">
+
+    <h1>Hello World</h1>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(() => console.log('Service Worker Registered'))
-                .catch(err => console.log('SW registration failed', err));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(() => console.log('Service Worker Registered'))
+                    .catch(err => console.log(err));
+            });
         }
     </script>
+
 </body>
 </html>
