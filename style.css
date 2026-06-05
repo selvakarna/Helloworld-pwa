@@ -2,18 +2,20 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #f4f4f4;
     font-family: Arial, sans-serif;
 }
 
-.hello {
-    font-size: 48px;
-    font-weight: bold;
+img {
+    width: 192px;
+    height: 192px;
+    margin-bottom: 20px;
+}
+
+h1 {
     color: #333;
-    padding: 20px 40px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 48px;
 }
